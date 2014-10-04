@@ -5,7 +5,59 @@ html, body {
     text-align: center;
     margin: 0px;
     height: 100%;
+    background: #ffffff;
 }
-.cursor-hand{
-    cursor:hand;
+/* Set the cursor to pointer */
+.cursor-pointer{
+    cursor: pointer;
+}
+
+
+.arrow {
+    height: 10px;
+}
+
+.question{
+    font-size: 1rem;
+}
+.answer{
+    font-size: 0.7rem;
+}
+/* Activity Question Color */
+#activity .question {
+    background: #96281B;
+}
+/* Activity Answer Color */
+#activity .answer {
+    background: #d01716;
+}
+
+/* Distance Question Color */
+#distance .question {
+    background: #019875;
+}
+
+/* Distance Answer Color */
+#distance .answer {
+    background: #03a678;
+}
+
+.answer1 {
+    opacity: 1;
+}
+
+.answer2 {
+    opacity:0.9;
+}
+
+.answer3 {
+    opacity:0.8;
+}
+
+.answer4 {
+    opacity:0.7;
+}
+
+.answer5 {
+    opacity:0.6;
 }

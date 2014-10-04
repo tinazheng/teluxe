@@ -20,34 +20,3 @@
 	text-align: center;
 	height: 70vh;
 }
-.arrow {
-	height: 10px;
-}
-.question {
-	font-size: 1rem;
-	background: #96281B;
-}
-
-.answer {
-	font-size: 0.7rem;
-}
-
-.answer1 {
-	background: #d01716;
-}
-
-.answer2 {
-	background: #e51c23;
-}
-
-.answer3 {
-	background: #e84e40;
-}
-
-.answer4 {
-	background: #f36c60;
-}
-
-.answer5 {
-	background: #f69988;
-}

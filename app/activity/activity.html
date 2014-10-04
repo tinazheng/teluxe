@@ -1,21 +1,21 @@
 <div class="container-fluid">
-	<div class="row">
+	<div class="row" ui-sref="distance">
 		<div class="horizontal-bar col-xs-12 question">
 			What are you doing right now? 
 		</div>
-		<div class="horizontal-bar col-xs-12 answer answer1">
+		<div class="horizontal-bar col-xs-12 answer answer1 cursor-pointer" ng-click="qStorage.activity='sleep'">
 			Sleeping <img class="arrow" src='assets/right_arrow.png'>
 		</div>
-		<div class="horizontal-bar col-xs-12 answer answer2">
+		<div class="horizontal-bar col-xs-12 answer answer2 cursor-pointer" ng-click="qStorage.activity='read'">
 			Reading <img class="arrow" src='assets/right_arrow.png'>
 		</div>
-		<div class="horizontal-bar col-xs-12 answer answer3">
+		<div class="horizontal-bar col-xs-12 answer answer3 cursor-pointer" ng-click="qStorage.activity='computer'">
 			Working on the computer <img class="arrow" src='assets/right_arrow.png'>
 		</div>
-		<div class="horizontal-bar col-xs-12 answer answer4">
+		<div class="horizontal-bar col-xs-12 answer answer4 cursor-pointer" ng-click="qStorage.activity='lounging'">
 			Lounging <img class="arrow" src='assets/right_arrow.png'>
 		</div>
-		<div class="horizontal-bar col-xs-12 answer answer5">
+		<div class="horizontal-bar col-xs-12 answer answer5 cursor-pointer" ng-click="qStorage.activity='tv'">
 			Watching T.V. <img class="arrow" src='assets/right_arrow.png'>
 		</div>
 	</div>

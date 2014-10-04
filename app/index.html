@@ -10,9 +10,16 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- Pertty Fawnt -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+
+
     <!-- Boilerplate CSS -->
     <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
     <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
+
+    <!-- jQuery for Bootstrap -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
     <!-- Bootstrap Imports -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
@@ -25,7 +32,7 @@
 
     <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
-<body>
+<body id="{{$state.current.name}}">
 
     <div ui-view="content" class="content"></div>
 
@@ -40,6 +47,11 @@
     <!-- ngImports -->
     <script src="app.js"></script>
     <script src="index/index.js"></script>
+    <script src="activity/activity.js"></script>
+    <script src="distance/distance.js"></script>
+
+    <!-- Service Imports -->
     <script src="services/lux.js"></script>
+    <script src="services/qStorage.js"></script>
 </body>
 </html>

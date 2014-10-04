@@ -44,6 +44,16 @@ scorePortalApp.config(function($stateProvider, $urlRouterProvider, $locationProv
                     controller: 'activityController'
                 }
             }
+        })
+        .state('distance', {
+            url: '/distance',
+            title: "How far away is the source?",
+            views: {
+                'content':{
+                    templateUrl: 'distance/distance.html',
+                    controller: 'distanceController'
+                }
+            }
         });
 
     $locationProvider.html5Mode(true);
