@@ -1,0 +1,53 @@
+.horizontal-bar {
+	position: relative;
+	line-height: 16.66vh;
+	height: 16.66vh;
+/*	border: 1px solid black;*/
+
+}
+#begin-button a {
+	position: relative;
+	color: #90a4ae;
+	font-size: 0.5rem;
+	text-decoration: none;
+}
+#bulb-container {
+	position:relative;
+}
+#bulb {
+	position: relative;
+	top: 5vh;
+	text-align: center;
+	height: 70vh;
+}
+.arrow {
+	height: 10px;
+}
+.question {
+	font-size: 1rem;
+	background: #96281B;
+}
+
+.answer {
+	font-size: 0.7rem;
+}
+
+.answer1 {
+	background: #d01716;
+}
+
+.answer2 {
+	background: #e51c23;
+}
+
+.answer3 {
+	background: #e84e40;
+}
+
+.answer4 {
+	background: #f36c60;
+}
+
+.answer5 {
+	background: #f69988;
+}
