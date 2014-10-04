@@ -22,6 +22,11 @@ h3 {
 	color: #6C7A89;
 	font-size: 0.6em;
 }
+
+.bulb-icon {
+	position: relative;
+	height: 40%;
+}
 .stats{
 	padding: 5% 10%;
 }
@@ -49,7 +54,11 @@ h3 {
 	line-height: 16.66vh;
 	height: 16.66vh;
 /*	border: 1px solid black;*/
-
+}
+.horizontal-bar2 {
+	position:relative;
+	line-height: 25vh;
+	height: 25vh;
 }
 #begin-button a {
 	position: relative;
