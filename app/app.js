@@ -45,6 +45,16 @@ scorePortalApp.config(function($stateProvider, $urlRouterProvider, $locationProv
                 }
             }
         })
+        .state('testAmazon', {
+            url: '/test',
+            title: "Test Amazon Page",
+            views: {
+                'content':{
+                    templateUrl: 'test/test.html',
+                    controller: 'testController'
+                }
+            }
+        })
         .state('distance', {
             url: '/distance',
             title: "How far away is the source?",
