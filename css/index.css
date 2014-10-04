@@ -6,6 +6,43 @@ html, body {
 	margin: 0px;
 	height: 100%;
 }
+h1{
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 1.5rem;
+	color: black;
+	font-weight: 700;
+}
+
+h2{
+	color: #6C7A89;
+	font-size: 0.8rem;
+}
+
+h3 {
+	color: #6C7A89;
+	font-size: 0.6em;
+}
+.stats{
+	padding: 5% 10%;
+}
+.bulb-suggestions a {
+	text-decoration: none;
+	font-size: 0.5rem;
+	color:#6C7A89;
+}
+#suggested-bulbs-title {
+	color:#6C7A89;
+	font-size: 0.7rem;
+}
+.score {
+	color:#F4D03F;
+}
+.percentile {
+	color: #26A65B;
+}
+.centered-text{
+	text-align:center;
+}
 
 .horizontal-bar {
 	position: relative;
@@ -33,7 +70,7 @@ html, body {
 	height: 10px;
 }
 .question {
-	font-size: 1rem;
+	font-size: 0.89rem;
 	background: #96281B;
 }
 
