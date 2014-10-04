@@ -2,21 +2,42 @@
  * Created by Jacky on 10/4/14.
  */
 angular.module("teluxe")
-    .controller('testFBController',function($scope, $timeout, Facebook, shareResult){
+    .controller('testFBController',function($scope, $timeout, Facebook){
+
+        $scope.shareText = '';
 
         $scope.shareScore = function(score){
-            $scope.goPost('My lights scored '+score+' efficiency points on Teluxe! Can you do better?');
-        };
-
-        $scope.goPost = function(content){
-            if(!$scope.facebookReady){
-                $scope.IntentLogin();
+            $scope.shareText = 'My lights scored '+score+' efficiency points on Teluxe! Can you do better?';
+            if(!userIsConnected){
+                $scope.login();
             }
-            shareResult.post(content);
+            else{
+                $scope.goPost();
+            }
         };
 
-        // Define user empty data :/
-        $scope.user = {};
+        $scope.goPost = function(){
+            //call post
+//            Facebook.api('/me/feed', 'post', {
+//                link: 'teluxe.local',
+//                name: 'Teluxe',
+//                caption: 'Light Stuff',
+//                description: $scope.shareText,
+//                picture: 'http://www.easyvectors.com/assets/images/vectors/afbig/light-bulb-clip-art.jpg'
+//            },function(response){
+//
+//            });
+            FB.ui(
+                {
+                    method: 'share',
+                    href: 'teluxe.ngrok.com',
+                    caption:$scope.shareText
+                },
+                function(response) {
+                    console.log(response);
+                }
+            );
+        };
 
         // Defining user logged status
         $scope.logged = false;
@@ -34,8 +55,6 @@ angular.module("teluxe")
                 return Facebook.isReady();
             },
             function(newVal) {
-                if (newVal)
-                    $scope.facebookReady = true;
             }
         );
 
@@ -47,49 +66,25 @@ angular.module("teluxe")
             }
         });
 
-        /**
-         * IntentLogin
-         */
         $scope.IntentLogin = function() {
             if(!userIsConnected) {
                 $scope.login();
             }
         };
 
-        /**
-         * Login
-         */
         $scope.login = function() {
             Facebook.login(function(response) {
                 if (response.status == 'connected') {
                     $scope.logged = true;
-                    $scope.me();
+                    $scope.goPost();
                 }
-            });
+            },{ scope:'publish_actions' });
+            //TODO: need , for actual posts
         };
 
-        /**
-         * me
-         */
-        $scope.me = function() {
-            Facebook.api('/me', function(response) {
-                /**
-                 * Using $scope.$apply since this happens outside angular framework.
-                 */
-                $scope.$apply(function() {
-                    $scope.user = response;
-                });
-
-            });
-        };
-
-        /**
-         * Logout
-         */
         $scope.logout = function() {
             Facebook.logout(function() {
                 $scope.$apply(function() {
-                    $scope.user   = {};
                     $scope.logged = false;
                 });
             });
