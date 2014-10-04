@@ -45,6 +45,16 @@ teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $l
                 }
             }
         })
+        .state('stats', {
+            url: '/stats',
+            title: "Your Results",
+            views: {
+                'content':{
+                    templateUrl: 'stats/stats.html',
+                    controller: 'statsController'
+                }
+            }
+        })
         .state('distance', {
             url: '/distance',
             title: "How far away is the source?",
@@ -54,7 +64,17 @@ teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $l
                     controller: 'distanceController'
                 }
             }
+        })
+        .state('instructions', {
+            url: '/instructions',
+            title: "Light source sampling",
+            views: {
+                'content':{
+                    templateUrl: 'instructions/instructions.html',
+                    controller: 'instructionsController'
+                }
+            }
         });
 
-    $locationProvider.html5Mode(true);
+    //$locationProvider.html5Mode(true);
 });

@@ -1,0 +1,22 @@
+
+.stats{
+    padding: 5% 10%;
+}
+.bulb-suggestions a {
+    text-decoration: none;
+    font-size: 0.5rem;
+    color:#6C7A89;
+}
+#suggested-bulbs-title {
+    color:#6C7A89;
+    font-size: 0.7rem;
+}
+.score {
+    color:#F4D03F;
+}
+.percentile {
+    color: #26A65B;
+}
+.centered-text{
+    text-align:center;
+}
