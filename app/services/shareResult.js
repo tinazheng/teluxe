@@ -4,7 +4,7 @@
 angular.module("teluxe")
     .factory('shareResult', function($window, $rootScope,Facebook){
         return {
-            postResult: function(content){
+            post: function(content){
                 Facebook.ui({
                     method: 'feed',
                     link: 'teluxe.local',

@@ -4,11 +4,15 @@
 angular.module("teluxe")
     .controller('testFBController',function($scope, $timeout, Facebook, shareResult){
 
-        $scope.post = function(){
+        $scope.shareScore = function(score){
+            $scope.goPost('My lights scored '+score+' efficiency points on Teluxe! Can you do better?');
+        };
+
+        $scope.goPost = function(content){
             if(!$scope.facebookReady){
                 $scope.IntentLogin();
             }
-            shareResult.postResult('My lights scored n efficiency points on teluxe! Can you do better?');
+            shareResult.post(content);
         };
 
         // Define user empty data :/
