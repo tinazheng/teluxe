@@ -1,30 +1,63 @@
-/* app css stylesheet */
-
-.menu {
-  list-style: none;
-  border-bottom: 0.1em solid black;
-  margin-bottom: 2em;
-  padding: 0 0 0.5em;
+html, body {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 40px;
+    color: #fde0dc;
+    text-align: center;
+    margin: 0px;
+    height: 100%;
+    background: #ffffff;
+}
+/* Set the cursor to pointer */
+.cursor-pointer{
+    cursor: pointer;
 }
 
-.menu:before {
-  content: "[";
+
+.arrow {
+    height: 10px;
 }
 
-.menu:after {
-  content: "]";
+.question{
+    font-size: 1rem;
+}
+.answer{
+    font-size: 0.7rem;
+}
+/* Activity Question Color */
+#activity .question {
+    background: #96281B;
+}
+/* Activity Answer Color */
+#activity .answer {
+    background: #d01716;
 }
 
-.menu > li {
-  display: inline;
+/* Distance Question Color */
+#distance .question {
+    background: #019875;
 }
 
-.menu > li:before {
-  content: "|";
-  padding-right: 0.3em;
+/* Distance Answer Color */
+#distance .answer {
+    background: #03a678;
 }
 
-.menu > li:nth-child(1):before {
-  content: "";
-  padding: 0;
+.answer1 {
+    opacity: 1;
+}
+
+.answer2 {
+    opacity:0.9;
+}
+
+.answer3 {
+    opacity:0.8;
+}
+
+.answer4 {
+    opacity:0.7;
+}
+
+.answer5 {
+    opacity:0.6;
 }

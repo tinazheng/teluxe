@@ -1,0 +1,22 @@
+.horizontal-bar {
+	position: relative;
+	line-height: 16.66vh;
+	height: 16.66vh;
+/*	border: 1px solid black;*/
+
+}
+#begin-button a {
+	position: relative;
+	color: #90a4ae;
+	font-size: 0.5rem;
+	text-decoration: none;
+}
+#bulb-container {
+	position:relative;
+}
+#bulb {
+	position: relative;
+	top: 5vh;
+	text-align: center;
+	height: 70vh;
+}
