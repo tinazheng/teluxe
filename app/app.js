@@ -48,9 +48,9 @@ teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $l
                 }
             }
         })
-        .state('testAmazon', {
+        .state('testebay', {
             url: '/test',
-            title: "Test Amazon Page",
+            title: "Test Ebay Page",
             views: {
                 'content':{
                     templateUrl: 'test/test.html',
