@@ -1,11 +1,11 @@
 'use strict';
 
 /**
- * Created by Mike on 6/27/14.
+ * Created by Mike on 10/4/14.
  */
-var scorePortalApp = angular.module('teluxe', ['ui.router', 'duScroll']);
+var teluxe = angular.module('teluxe', ['ui.router', 'duScroll']);
 
-scorePortalApp.run(
+teluxe.run(
     [          '$rootScope', '$state', '$stateParams',
         function ($rootScope,   $state,   $stateParams) {
 
@@ -20,7 +20,7 @@ scorePortalApp.run(
 );
 
 //Angular UI Router Config
-scorePortalApp.config(function($stateProvider, $urlRouterProvider, $locationProvider, $logProvider){
+teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $logProvider){
     //TODO: Remove Debugging
     $logProvider.debugEnabled(true);
     $urlRouterProvider.otherwise('/');
