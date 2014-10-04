@@ -5,6 +5,7 @@ html, body {
 	text-align: center;
 	margin: 0px;
 	height: 100%;
+	overflow-x: hidden;
 }
 h1{
 	font-family: 'Open Sans Condensed', sans-serif;
@@ -18,11 +19,61 @@ h2{
 	font-size: 0.8rem;
 }
 
+
 h3 {
 	color: #6C7A89;
 	font-size: 0.6em;
 }
 
+.ebay-item-picture {
+	position: relative;
+	float:left;
+	width: 30%;
+}
+
+.ebay-item-title {
+	color: #6C7A89;
+	font-size: 0.5rem;
+}
+
+.ebay-item-description {
+	color: #6C7A89;
+	font-size: 0.5rem;
+}
+
+.ebay-item-selling-status {
+	color: #27ae60;
+	font-size: 0.5rem;
+}
+
+.ebay-item-current-price {
+	color: #27ae60;
+	font-size: 0.5rem;
+}
+
+.dark-text {
+	color: #6C7A89;
+}
+#ebay-title {
+	color: #2980b9;
+	font-size: 0.6em;
+	font-weight: 300;
+}
+
+
+.ebay-item-text-wrapper {
+	position: relative;
+	margin-left: 5px;
+	float: left;
+}
+.ebay-item-wrapper {
+	height: 30vh;
+	text-align: left;
+}
+
+#bulb-name{
+	color:#6C7A89 ;
+}
 .bulb-icon {
 	position: relative;
 	height: 40%;
