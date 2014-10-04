@@ -3,14 +3,14 @@
 /**
  * Created by Mike on 10/4/14.
  */
-var teluxe = angular.module('teluxe', ['ui.router', 'duScroll']);
+var teluxe = angular.module('teluxe', ['ui.router', 'duScroll','facebook']);
 
 teluxe.run(
     [          '$rootScope', '$state', '$stateParams',
         function ($rootScope,   $state,   $stateParams) {
 
             // It's very handy to add references to $state and $stateParams to the $rootScope
-            // so that you can access them from any scope within your applications.For example,
+            // so that you can access the m from any scope within your applications.For example,
             // <li ui-sref-active="active }"> will set the <li> // to active whenever
             // 'contacts.list' or one of its decendents is active.
             $rootScope.$state = $state;
@@ -45,6 +45,16 @@ teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $l
                 }
             }
         })
+        .state('testFB',{
+            url:'/testFB',
+            title: 'Test FB',
+            views: {
+                'content':{
+                    templateUrl:'testFB/testFB.html',
+                    controller:'testFBController'
+                }
+            }
+        })
         .state('distance', {
             url: '/distance',
             title: "How far away is the source?",
@@ -58,3 +68,19 @@ teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $l
 
     $locationProvider.html5Mode(true);
 });
+
+//Facebook Config
+teluxe.config(function(FacebookProvider){
+            var myAppId = '298846526977428';
+
+            // You can set appId with setApp method
+            FacebookProvider.setAppId('myAppId');
+
+            /**
+             * After setting appId you need to initialize the module.
+             * You can pass the appId on the init method as a shortcut too.
+             */
+            FacebookProvider.init(myAppId);
+
+        }
+    );
