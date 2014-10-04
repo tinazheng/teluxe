@@ -20,7 +20,10 @@ teluxe.run(
 );
 
 //Angular UI Router Config
-teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $logProvider){
+teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $logProvider, $httpProvider){
+    //Enable CORS
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
     //TODO: Remove Debugging
     $logProvider.debugEnabled(true);
     $urlRouterProvider.otherwise('/');
