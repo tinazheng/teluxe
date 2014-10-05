@@ -9,20 +9,34 @@ angular.module('teluxe')
             return 1200 * $window.Math.pow(Math.E, - SCORE_COEFFICIENT * $window.Math.pow(lux_change,2));
         }
 
-        function getCurrentWatts(lux, bulb, distance){
+        function getEfficacy(bulb){
             var efficacy = 0;
+<<<<<<< HEAD
             if (bulb == "flourescent")
+=======
+            if (bulb == "fluorescent")
+>>>>>>> 517bc3db5d262b8950ebb20cee15b55708a904d7
                 efficacy = 43;
             else if (bulb == "incandescent")
                 efficacy = 12;
             else if (bulb == "LED")
                 efficacy = 79;
+<<<<<<< HEAD
+=======
+            return efficacy
+        }
+>>>>>>> 517bc3db5d262b8950ebb20cee15b55708a904d7
 
-            return getCurrentLumens(lux, distance) / efficacy;
+        function getCurrentWatts(lux, bulb, distance){
+            return getCurrentLumens(lux, distance) / getEfficacy(bulb);
         }
 
         function getCurrentLumens(lux, d){
+<<<<<<< HEAD
             var REFLECTION_COEFFICIENT = 0.48;
+=======
+            var REFLECTION_COEFFICIENT = 0.48;              // Between 0.07 and 0.1
+>>>>>>> 517bc3db5d262b8950ebb20cee15b55708a904d7
             return lux * d * d * REFLECTION_COEFFICIENT;
         }
 
@@ -33,7 +47,7 @@ angular.module('teluxe')
                 return 1000;
             else if (activity == "computer")    // Normal Office Work
                 return 500;
-            else if (activity == "lounge")      // Casual Work
+            else if (activity == "lounging")      // Casual Work
                 return 250;
             else if (activity == "tv")          // Theaters
                 return 150;
@@ -44,11 +58,13 @@ angular.module('teluxe')
             var LUX_RECOMMENDED = getRecommendedLux(activity);
             var lux_change = $window.Math.abs(lux - LUX_RECOMMENDED);
 
+            console.log('lux change'+lux_change);
+
             if (lux < LUX_RECOMMENDED)
-                return "You do not have enough light.  You are " + lux_change + " lux below the recommended amount";
+                return "You do not have enough light.  You are " + lux_change + " lux below the recommended amount.";
             else if(lux == LUX_RECOMMENDED)
-                return "Perfect!  You have the ideal amount of light."
-            return "You are wasting energy.  You have " + lux_change + " lux above the recommended amount";
+                return "Perfect! You have the ideal amount of light.";
+            return "You are wasting energy.  You have " + lux_change + " lux above the recommended amount.";
         }
 
         function getRecommendedLumens(activity, d){
@@ -82,16 +98,26 @@ angular.module('teluxe')
                 return DAYLIGHT;
             else if (activity == "computer")
                 return COOL;
-            else if (activity == "lounge")
+            else if (activity == "lounging")
                 return SOFT_WHITE;
             else if (activity == "tv")
                 return COOL;
             return 0;
         }
 
+        function getSavings(curLightWattage,recommendedLightWatts,bulb_type){
+            var curEfficacy = getEfficacy(bulb_type)/100;
+            var idealEfficacy = getEfficacy('LED')/100;
+
+            var curUsedWatt = curLightWattage/curEfficacy;
+            var idealUsedWatt = recommendedLightWatts/idealEfficacy;
+
+            return (curUsedWatt - idealUsedWatt) / curUsedWatt;
+        }
+
         return{
             getRecommendedSettings:  function(lux_use, action, distance, bulb_type) {
-                return {
+                var returnBody = {
                     "percentile": getPercentile(lux_use, action),
                     "currentWattage": getCurrentWatts(lux_use, bulb_type, distance),
                     "comment": getComment(lux_use, action),
@@ -100,6 +126,9 @@ angular.module('teluxe')
                     "recommendedLumens": getRecommendedLumens(action, distance),
                     "recommendedTemperature": getRecommendedTemperature(action)
                 };
+
+                returnBody.savings = getSavings(returnBody.currentWattage,returnBody.recommendedWatts,bulb_type);
+                return returnBody;
             }
         }
     });

@@ -12,13 +12,15 @@ html, body {
     cursor: pointer;
 }
 
-
 .arrow {
     height: 10px;
 }
 
 .question{
     font-size: 9vw;
+}
+.question-types{
+    font-size: 7vw;
 }
 .answer{
     font-size: 0.7rem;
@@ -40,6 +42,16 @@ html, body {
 /* Distance Answer Color */
 #distance .answer {
     background: #03a678;
+}
+
+/* Types Question Color */
+#types .question {
+    background: #420198;
+}
+
+/* Types Answer Color */
+#types .answer {
+    background: #4E08A8;
 }
 
 .answer1 {

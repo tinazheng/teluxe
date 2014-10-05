@@ -1,3 +1,127 @@
+html, body {
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 9vw;
+	color: #fde0dc;
+	text-align: center;
+	margin: 0px;
+	height: 100%;
+	/*overflow-x: hidden;*/
+}
+h1{
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 1.5rem;
+	color: black;
+	font-weight: 700;
+}
+
+h2{
+	color: #6C7A89;
+	font-size: 0.8rem;
+}
+
+
+h3 {
+	color: #6C7A89;
+	font-size: 0.6em;
+}
+
+.ebay-item-image-container{
+    margin: 0.3em auto;
+    width: 80vw;
+}
+
+.ebay-item-image {
+	position:relative;
+    width: 100%;
+	height: 40vh;
+/*	margin: 0px auto;*/
+	/*background: url('http://i.ebayimg.com/00/s/NjAwWDYwMA==/z/-UkAAOSwbqpTz08o/$_12.JPG');*/
+	background-size: cover;
+/*	text-align: center;*/
+}
+
+
+.ebay-item-title {
+	font-size: 0.5rem;
+}
+.ebay-item-description {
+	color: #6C7A89;
+	font-size: 0.5rem;
+}
+
+.ebay-item-status {
+/*	display: inline-block;*/
+	color: #27ae60;
+	font-size: 0.6rem;
+	float: right;
+}
+
+.ebay-item-price {
+/*	display: inline-block;*/
+	color: #6C7A89;
+	font-size: 0.6rem;
+	float: left;
+}
+
+.dark-text {
+	color: #6C7A89;
+	font-size: 0.5rem;
+}
+#ebay-title {
+	color: #2980b9;
+	font-size: 0.5em;
+	font-weight: 300;
+}
+
+
+.ebay-item-text-wrapper {
+	position: relative;
+/*	width: 100%;*/
+/*	float: left;*/
+}
+.ebay-item-wrapper {
+	border-bottom: 1px solid #7f8c8d;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	text-align: left;
+	overflow:hidden;
+/*	width: 100vw;*/
+}
+
+#bulb-name{
+	color:#6C7A89 ;
+}
+.bulb-image {
+	position:relative;
+	width: 80%;
+	margin: 0px auto;
+}
+.bulb-icon {
+	position: relative;
+	height: 40%;
+}
+.stats{
+	padding: 5% 10%;
+}
+.bulb-suggestions a {
+	text-decoration: none;
+	font-size: 0.5rem;
+	color:#6C7A89;
+}
+#suggested-bulbs-title {
+	color:#6C7A89;
+	font-size: 0.7rem;
+}
+.score {
+	color:#F4D03F;
+}
+.percentile {
+	color: #26A65B;
+}
+.centered-text{
+	text-align:center;
+}
+
 .horizontal-bar {
 	position: relative;
 	line-height: 16.66vh;
@@ -5,6 +129,18 @@
 /*	border: 1px solid black;*/
 
 }
+.horizontal-bar2 {
+	position:relative;
+	line-height: 25vh;
+	height: 25vh;
+}
+
+.horizontal-bar3 {
+    position:relative;
+    line-height: 27.8vh;
+    height: 27.8vh;
+}
+
 #begin-button a {
 	position: relative;
 	color: #90a4ae;

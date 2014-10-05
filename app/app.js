@@ -62,13 +62,13 @@ teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $l
                 }
             }
         })
-        .state('stats', {
-            url: '/stats',
-            title: "Your Results",
+        .state('testebay', {
+            url: '/test',
+            title: "Test Ebay Page",
             views: {
                 'content':{
-                    templateUrl: 'stats/stats.html',
-                    controller: 'statsController'
+                    templateUrl: 'test/test.html',
+                    controller: 'testController'
                 }
             }
         })
@@ -79,6 +79,26 @@ teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $l
                 'content':{
                     templateUrl: 'distance/distance.html',
                     controller: 'distanceController'
+                }
+            }
+        })
+        .state('types', {
+            url: '/types',
+            title: "What type of light bulb are you using?",
+            views: {
+                'content':{
+                    templateUrl: 'types/types.html',
+                    controller: 'typesController'
+                }
+            }
+        })
+        .state('stats', {
+            url: '/stats',
+            title: "Teluxe Results",
+            views: {
+                'content':{
+                    templateUrl: 'stats/stats.html',
+                    controller: 'statsController'
                 }
             }
         })
