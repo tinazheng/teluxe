@@ -24,7 +24,7 @@ angular.module("teluxe")
             $scope.samples.push(newValue);
             console.log(newValue);
             //Stop after enough light samples
-            if($scope.samples.length > 2){
+            if($scope.samples.length > 25){
                 $scope.calculate();
             }
         });
