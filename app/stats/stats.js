@@ -6,7 +6,7 @@ angular.module("teluxe")
         $scope.qStorage = qStorage;
         $scope.results = qStorage.model.results;
 
-        console.log(results);
+        console.log($scope.results);
 
         //TODO:REMOVE!!
         $scope.debugString = JSON.stringify(qStorage.model.results);

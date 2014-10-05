@@ -5,6 +5,14 @@ angular.module("teluxe")
     .controller('instructionsController',function($scope, $rootScope, $state, qStorage, lux, processLightService){
 
         $scope.qStorage = qStorage;
+
+        $scope.mockListener = function(){
+            var rec = processLightService.getRecommendedSettings(500, $scope.qStorage.model.activity, $scope.qStorage.model.distance, $scope.qStorage.model.type);
+
+            qStorage.model.results = rec;
+
+            $state.go('stats');
+        };
         
         $scope.sampling = false;
 
@@ -50,12 +58,12 @@ angular.module("teluxe")
             }
             $scope.sampleAverage = sampleSum/$scope.samples.length;
 
-            console.log($scope.sampleAverage, qStorage.model.activity, qStorage.model.distance);
+//            console.log($scope.sampleAverage, qStorage.model.activity, qStorage.model.distance);
 
             //Get recommendation
             var rec = processLightService.getRecommendedSettings($scope.sampleAverage, qStorage.model.activity, qStorage.model.distance, 'LED');
 
-            console.log(rec);
+//            console.log(rec);
 
             qStorage.model.results = rec;
 
