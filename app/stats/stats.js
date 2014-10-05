@@ -3,9 +3,20 @@
  */
 angular.module("teluxe")
     .controller('statsController',function($scope, $rootScope, qStorage, Facebook){
-        $scope.qStorage = qStorage;
 
+        $scope.qStorage = qStorage;
         $scope.shareText = '';
+        $scope.saved = 0;
+
+
+        //TODO: Change to actual calculations
+        if($scope.qStorage.type == 'incandescent'){
+            $scope.saved = '$200'
+        }
+        if($scope.qStorage.type == 'fluorescent'){
+            $scope.saved = '$200'
+        }
+
 
         $scope.shareScore = function(score){
             $scope.shareText = 'My lights scored '+score+' efficiency points on Teluxe! Can you do better?';
@@ -84,7 +95,6 @@ angular.module("teluxe")
          * Taking approach of Events :D
          */
         $scope.$on('Facebook:statusChange', function(ev, data) {
-            console.log('Status: ', data);
             if (data.status == 'connected') {
                 $scope.$apply(function() {
                     $scope.salutation = true;

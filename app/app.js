@@ -68,6 +68,16 @@ teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $l
                 }
             }
         })
+        .state('types', {
+            url: '/types',
+            title: "What type of light bulb are you using?",
+            views: {
+                'content':{
+                    templateUrl: 'types/types.html',
+                    controller: 'typesController'
+                }
+            }
+        })
         .state('instructions', {
             url: '/instructions',
             title: "Light source sampling",

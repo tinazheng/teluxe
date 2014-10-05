@@ -14,9 +14,22 @@
 #bulb-container {
 	position:relative;
 }
+.bulb-icon {
+    position: relative;
+    height: 40%;
+}
 #bulb {
 	position: relative;
 	top: 5vh;
 	text-align: center;
 	height: 70vh;
+}
+#suggested-bulbs-title {
+    color:#6C7A89;
+    font-size: 0.7rem;
+}
+.horizontal-bar2 {
+    position:relative;
+    line-height: 25vh;
+    height: 25vh;
 }
