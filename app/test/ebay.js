@@ -7,6 +7,13 @@
 angular.module("teluxe")
     .controller('testController',function($scope, ebay_search_service){
 
+        function Light(picture, title, url, currentPrice, saleTimeLeft){
+            this.picture = picture;
+            this.title = title;
+            this.url = url;
+            this.currentPrice = currentPrice;
+            this.saleTimeLeft = saleTimeLeft;
+        }
         $scope.lights = [];
         $scope.setLightsFromData = function(data){
 
@@ -38,7 +45,7 @@ angular.module("teluxe")
                 }
 
                 //Stores info taken from Ebay into Array
-                $scope.lights.push([light_galleryUrl, light_title, light_url, light_currentPrice, light_time])
+                $scope.lights.push(new Light(light_galleryUrl, light_title, light_url, light_currentPrice, light_time));
             }
             return $scope.lights;
         };
