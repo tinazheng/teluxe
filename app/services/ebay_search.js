@@ -11,7 +11,7 @@ angular.module("teluxe")
                     watt_or_lumen = watt + 'W';
                 }
                 else{
-                    watt_or_lumen = lumen + '%20lumens';
+                    watt_or_lumen = lumen + 'LM';
                 }
 
                 lightType = watt_or_lumen+"%20" + bulb + "%20light%20bulb";

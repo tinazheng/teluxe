@@ -36,26 +36,28 @@
     </div>
 
     <!--Bulb Suggestions-->
-    <div class="row bulb-suggestions-container" ng-if="lights">
+    <div class="row bulb-suggestions-container" ng-if="lights.length">
         <h1 class='centered-text' id="ebay-title">Get your new light bulbs from Ebay:</h1>
         <div class="ebay-item-wrapper"  ng-repeat="light in lights">
-            <div class="ebay-item-image-container">
-                <div class="ebay-item-image" ng-style="{'background-image': 'url({{ light.picture }})'}">
-            </div>
-            </div>
-            <div class="ebay-item-title"><a href=" {{ light.url }} " target="_blank"> {{ light.title }} </a></div>
-            <div class='row'>
-                <div class="ebay-item-price col-xs-6">
-                    <div class='pull-left'>
-                        {{ light.currentPrice }}
+            <a href=" {{ light.url }} " target="_blank">
+                <div class="ebay-item-image-container">
+                    <div class="ebay-item-image" ng-style="{'background-image': 'url({{ light.picture }})'}">
+                </div>
+                </div>
+                <div class="ebay-item-title"> {{ light.title }} </div>
+                <div class='row'>
+                    <div class="ebay-item-price col-xs-6">
+                        <div class='pull-left'>
+                            {{ light.currentPrice }}
+                        </div>
+                    </div>
+                    <div class="ebay-item-status col-xs-6">
+                        <div class='pull-right'>
+                            {{ light.saleTimeLeft }}
+                        </div>
                     </div>
                 </div>
-                <div class="ebay-item-status col-xs-6">
-                    <div class='pull-right'>
-                        {{ light.saleTimeLeft }}
-                    </div>
-                </div>
-            </div>
+            </a>
         </div>
     </div>
 
