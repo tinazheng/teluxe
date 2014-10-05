@@ -1,3 +1,6 @@
+/**
+ * Created by JMBros on 10/4/14.
+ */
 angular.module('teluxe')
     .factory('processLightService', function($window){
 
@@ -80,15 +83,15 @@ angular.module('teluxe')
             var DAYLIGHT = 5800;     // Between 5000K and 6500K
 
             if (activity == "sleep")
-                return SOFT_WHITE;
+                return "SOFT_WHITE";
             else if (activity == "read")
-                return DAYLIGHT;
+                return "DAYLIGHT";
             else if (activity == "computer")
-                return COOL;
+                return "COOL";
             else if (activity == "lounging")
-                return SOFT_WHITE;
+                return "SOFT_WHITE";
             else if (activity == "tv")
-                return COOL;
+                return "COOL";
             return 0;
         }
 
