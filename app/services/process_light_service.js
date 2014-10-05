@@ -9,6 +9,23 @@ angular.module('teluxe')
             return 100 * $window.Math.pow(Math.E, - SCORE_COEFFICIENT * $window.Math.pow(lux_change,2));
         }
 
+        function getCurrentWatts(lux, bulb, distance){
+            var efficacy = 0;
+            if (bulb == "flourescent")
+                efficacy = 20;
+            else if (bulb == "incandescent")
+                efficacy = 60;
+            else if (bulb == "LED")
+                efficacy = 60;
+
+            return getCurrentLumens(lux, distance) / efficacy;
+        }
+
+        function getCurrentLumens(lux, d){
+            var REFLECTION_COEFFICIENT = 0.09;              // Between 0.07 and 0.1
+            return lux * d * d * REFLECTION_COEFFICIENT;
+        }
+
         function getRecommendedLux(activity){
             if (activity == "sleep")            // Dark Surroundings
                 return 25;
@@ -29,11 +46,13 @@ angular.module('teluxe')
 
             if (lux < LUX_RECOMMENDED)
                 return "You do not have enough light.  You are " + lux_change + " lux below the recommended amount";
+            else if(lux == LUX_RECOMMENDED)
+                return "Perfect!  You have the ideal amount of light."
             return "You are wasting energy.  You have " + lux_change + " lux above the recommended amount";
         }
 
         function getRecommendedLumens(activity, d){
-            var REFLECTION_COEFFICIENT = 0.07;              // Between 0.8 and 0.12
+            var REFLECTION_COEFFICIENT = 0.09;              // Between 0.07 and 0.1
             var recommendedLux = getRecommendedLux(activity);
             return recommendedLux * d * d * REFLECTION_COEFFICIENT;
         }
@@ -71,9 +90,10 @@ angular.module('teluxe')
         }
 
         return{
-            getRecommendedSettings:  function(lux_use, action, distance) {
+            getRecommendedSettings:  function(lux_use, action, distance, bulb_type) {
                 return {
                     "percentile": getPercentile(lux_use, action),
+                    "currentWattage": getCurrentWatts(lux_use, bulb_type, distance),
                     "comment": getComment(lux_use, action),
                     "recommendedWatts": getRecommendedWatts(action, distance),
                     "recommendedLux": getRecommendedLux(action),
