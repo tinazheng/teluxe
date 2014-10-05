@@ -68,16 +68,6 @@ teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $l
                 }
             }
         })
-        .state('test', {
-            url: '/test',
-            title: "How far away is the source?",
-            views: {
-                'content':{
-                    templateUrl: 'Test/test.html',
-                    controller: 'testController'
-                }
-            }
-        })
         .state('instructions', {
             url: '/instructions',
             title: "Light source sampling",
