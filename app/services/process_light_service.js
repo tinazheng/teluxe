@@ -6,7 +6,7 @@ angular.module('teluxe')
             var LUX_RECOMMENDED = getRecommendedLux(activity);
 
             var lux_change = $window.Math.abs(lux - LUX_RECOMMENDED);
-            return 100 * $window.Math.pow(Math.E, - SCORE_COEFFICIENT * $window.Math.pow(lux_change,2));
+            return 1200 * $window.Math.pow(Math.E, - SCORE_COEFFICIENT * $window.Math.pow(lux_change,2));
         }
 
         function getCurrentWatts(lux, bulb, distance){

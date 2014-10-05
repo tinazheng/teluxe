@@ -1,11 +1,15 @@
-<div class="container-fluid cursor-pointer" ui-sref="activity">
-    <h3 class=".centered-text">Click below to get initial reading.</h3>
-    <br/>
-    <button type="button" class="btn btn-warning btn-lg btn-block">Start >></button>
-    <br/>
-    <h3 class=".centered-text">
-        Move your phone one more foot away from the light source. Then, click below to get secondary reading.
-    </h3>
-    <br/>
-    <button type="button" class="btn btn-warning btn-lg btn-block">Luxify! >></button>
+<div class="container-fluid cursor-pointer">
+    <div id="instructions-beginning" ng-show="stage==0">
+        <h3 class="centered-text">Place this device on a flat surface at the desired location of activity and press the button below.</h3>
+        <br/>
+        <button type="button" class="btn btn-warning btn-lg btn-block" ng-click="runListener()">Start Sample >></button>
+    </div>
+    <div id="instructions-loading" ng-show="stage==1">
+        <h3 class="centered-text">Sampling lighting conditions...</h3>
+        <br/>
+        <i class="fa fa-refresh fa-spin"></i>
+        <br/>
+        <br/>
+        <h3 class="centered-text">If sampling takes a while, try gently moving the device around.</h3>
+    </div>
 </div>

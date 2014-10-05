@@ -5,6 +5,9 @@ angular.module("teluxe")
     .controller('statsController',function($scope, $rootScope, qStorage, Facebook){
         $scope.qStorage = qStorage;
 
+        //TODO:REMOVE!!
+        $scope.debugString = JSON.stringify(qStorage.model.results);
+
         $scope.shareText = '';
 
         $scope.shareScore = function(score){

@@ -22,7 +22,8 @@ angular.module("teluxe")
         */
         model: {
             activity: '',
-            distance: ''
+            distance: '',
+            results: {}
         },
 
         SaveState: function () {
