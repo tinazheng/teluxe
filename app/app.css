@@ -12,13 +12,15 @@ html, body {
     cursor: pointer;
 }
 
-
 .arrow {
     height: 10px;
 }
 
 .question{
     font-size: 9vw;
+}
+.question-types{
+    font-size: 7vw;
 }
 .answer{
     font-size: 0.7rem;

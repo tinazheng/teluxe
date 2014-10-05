@@ -3,7 +3,7 @@
 /**
  * Created by Mike on 10/4/14.
  */
-var teluxe = angular.module('teluxe', ['ui.router', 'duScroll']);
+var teluxe = angular.module('teluxe', ['ui.router', 'duScroll','facebook']);
 
 teluxe.run(
     [          '$rootScope', '$state', '$stateParams',
@@ -20,7 +20,7 @@ teluxe.run(
 );
 
 //Angular UI Router Config
-teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $logProvider, $httpProvider){
+teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $logProvider, $httpProvider, FacebookProvider){
     //Enable CORS
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
@@ -89,6 +89,16 @@ teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $l
                 'content':{
                     templateUrl: 'types/types.html',
                     controller: 'typesController'
+                }
+            }
+        })
+        .state('stats', {
+            url: '/stats',
+            title: "Teluxe Results",
+            views: {
+                'content':{
+                    templateUrl: 'stats/stats.html',
+                    controller: 'statsController'
                 }
             }
         })

@@ -129,6 +129,13 @@ h3 {
 	line-height: 25vh;
 	height: 25vh;
 }
+
+.horizontal-bar3 {
+    position:relative;
+    line-height: 27.8vh;
+    height: 27.8vh;
+}
+
 #begin-button a {
 	position: relative;
 	color: #90a4ae;
