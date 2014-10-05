@@ -6,13 +6,12 @@ angular.module("teluxe")
 
         $scope.qStorage = qStorage;
 
-        $scope.mockListener = function(){
-            var rec = processLightService.getRecommendedSettings(500, $scope.qStorage.model.activity, $scope.qStorage.model.distance, $scope.qStorage.model.type);
-
-            qStorage.model.results = rec;
+        //TODO: Remove
+        /*$scope.mockListener = function(){
+            qStorage.model.results = processLightService.getRecommendedSettings(900, $scope.qStorage.model.activity, $scope.qStorage.model.distance, $scope.qStorage.model.type);
 
             $state.go('stats');
-        };
+        };*/
         
         $scope.sampling = false;
 

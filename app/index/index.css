@@ -25,9 +25,14 @@ h3 {
 	font-size: 0.6em;
 }
 
+.ebay-item-image-container{
+    margin: 0.3em auto;
+    width: 80vw;
+}
+
 .ebay-item-image {
 	position:relative;
-	width: 80vw;
+    width: 100%;
 	height: 40vh;
 /*	margin: 0px auto;*/
 	/*background: url('http://i.ebayimg.com/00/s/NjAwWDYwMA==/z/-UkAAOSwbqpTz08o/$_12.JPG');*/
