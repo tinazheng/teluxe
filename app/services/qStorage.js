@@ -16,7 +16,7 @@ angular.module("teluxe")
          Type Options:
             fluorescent
             incandescent
-            led
+            LED
          Distance Options: (Note: They're a single value for convenience but should rep. full range in the answr)
             1
             2
