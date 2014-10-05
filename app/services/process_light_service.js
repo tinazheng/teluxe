@@ -11,7 +11,6 @@ angular.module('teluxe')
 
         function getEfficacy(bulb){
             var efficacy = 0;
-            if (bulb == "flourescent")
             if (bulb == "fluorescent")
                 efficacy = 43;
             else if (bulb == "incandescent")
@@ -26,7 +25,7 @@ angular.module('teluxe')
         }
 
         function getCurrentLumens(lux, d){
-            var REFLECTION_COEFFICIENT = 0.48;
+            var REFLECTION_COEFFICIENT = 0.48;              // Between 0.07 and 0.1
             return lux * d * d * REFLECTION_COEFFICIENT;
         }
 
