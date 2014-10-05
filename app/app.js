@@ -20,10 +20,24 @@ teluxe.run(
 );
 
 //Angular UI Router Config
-teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $logProvider, $httpProvider){
+teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $logProvider, $httpProvider, FacebookProvider){
     //Enable CORS
     $httpProvider.defaults.useXDomain = true;
     delete $httpProvider.defaults.headers.common['X-Requested-With'];
+
+    //Facebook Config
+
+    var myAppId = '298846526977428';
+
+    // You can set appId with setApp method
+    FacebookProvider.setAppId('myAppId');
+
+    /**
+     * After setting appId you need to initialize the module.
+     * You can pass the appId on the init method as a shortcut too.
+     */
+    FacebookProvider.init(myAppId);
+
     //TODO: Remove Debugging
     $logProvider.debugEnabled(true);
     $urlRouterProvider.otherwise('/');
@@ -48,13 +62,13 @@ teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $l
                 }
             }
         })
-        .state('stats', {
-            url: '/stats',
-            title: "Your Results",
+        .state('testebay', {
+            url: '/test',
+            title: "Test Ebay Page",
             views: {
                 'content':{
-                    templateUrl: 'stats/stats.html',
-                    controller: 'statsController'
+                    templateUrl: 'test/test.html',
+                    controller: 'testController'
                 }
             }
         })
@@ -65,6 +79,26 @@ teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $l
                 'content':{
                     templateUrl: 'distance/distance.html',
                     controller: 'distanceController'
+                }
+            }
+        })
+        .state('types', {
+            url: '/types',
+            title: "What type of light bulb are you using?",
+            views: {
+                'content':{
+                    templateUrl: 'types/types.html',
+                    controller: 'typesController'
+                }
+            }
+        })
+        .state('stats', {
+            url: '/stats',
+            title: "Teluxe Results",
+            views: {
+                'content':{
+                    templateUrl: 'stats/stats.html',
+                    controller: 'statsController'
                 }
             }
         })
@@ -81,19 +115,3 @@ teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $l
 
     //$locationProvider.html5Mode(true);
 });
-
-//Facebook Config
-teluxe.config(function(FacebookProvider){
-        var myAppId = '298846526977428';
-
-        // You can set appId with setApp method
-        FacebookProvider.setAppId('myAppId');
-
-        /**
-         * After setting appId you need to initialize the module.
-         * You can pass the appId on the init method as a shortcut too.
-         */
-        FacebookProvider.init(myAppId);
-
-    }
-);

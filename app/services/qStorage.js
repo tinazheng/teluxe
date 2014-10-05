@@ -13,6 +13,10 @@ angular.module("teluxe")
              computer
              lounging
              tv
+         Type Options:
+            fluorescent
+            incandescent
+            LED
          Distance Options: (Note: They're a single value for convenience but should rep. full range in the answr)
             1
             2
@@ -22,7 +26,9 @@ angular.module("teluxe")
         */
         model: {
             activity: '',
-            distance: ''
+            distance: '',
+            type:'',
+            results: {}
         },
 
         SaveState: function () {

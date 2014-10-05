@@ -1,20 +1,69 @@
 <div class="container-fluid">
-    <h1 class='centered-text'>Your score: <span class="score">899</span></h1>
-    <h2 class='centered-text'>Based on our data, you are in the <span class="percentile">92nd percentile</span> of all Americans for lighting efficiency.</h2>
-    <div class="col-xs-12">
-        <button type="button" class="btn btn-large btn-danger btn-share" ng-click="shareScore(899)">Share Result on Facebook</button>
-    </div>
-    <div class="bulb-suggestions col-xs-6">
-        <hr>
-        <span id='suggested-bulbs-title'>Suggested bulbs:</span>
-        <br/>
-        <a href="#">GE White Hybrid Halogen CFL15W >></a>
-        <br/>
-        <a href="#">Philips' Energy Saver Mini Twister 13W >> </a>
-        <br/>
-        <a href="#">EcoSmart LED A19 13W >> </a>
-    </div>
-    <div class="social-media col-xs-6">
+    <!--Score-->
+    <h1 class='centered-text'>Your score: <span class="score" ng-bind="results.percentile | number:0">899</span></h1>
 
+    <!--Share on FB-->
+    <div class="col-xs-12">
+        <button type="button" class="btn btn-large btn-primary btn-share" ng-click="shareScore(results.percentile)">Share Score on Facebook!</button>
     </div>
+
+    <!--Comment-->
+    <div class="row">
+        <div class="col-xs-1"></div>
+        <div class="col-xs-10">
+            <h2 class='centered-text' ng-bind="results.comment"></h2>
+            <h3 class="centered-text">We suggest the following type of light based on your usage...</h3>
+        </div>
+        <div class="col-xs-1"></div>
+    </div>
+
+    <!--Recommended Light Bulb Type-->
+    <div class="row">
+        <div class="col-xs-6">
+            <h3>Type: </h3><span class="score">LED</span>
+        </div>
+        <div class="col-xs-6">
+            <h3>Lumens: </h3><span class="score" ng-bind="results.recommendedLumens"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12" ng-class="{'col-xs-6':results.savings>0}">
+            <h3>Temperature: </h3><span class="score" ng-bind="results.recommendedTemperature+'K'"></span>
+        </div>
+        <div class="col-xs-6" ng-if="results.savings>0">
+            <h3>Reduces Cost By: </h3><span class="score" ng-bind="'~'+(results.savings*100 | number: 0)+'%'"></span>
+        </div>
+    </div>
+
+    <!--Bulb Suggestions-->
+    <div class="row bulb-suggestions-container" ng-if="lights.length">
+        <h1 class='centered-text' id="ebay-title">Get your new light bulbs from Ebay:</h1>
+        <div class="ebay-item-wrapper"  ng-repeat="light in lights">
+            <a href=" {{ light.url }} " target="_blank">
+                <div class="ebay-item-image-container">
+                    <div class="ebay-item-image" ng-style="{'background-image': 'url({{ light.picture }})'}">
+                </div>
+                </div>
+                <div class="ebay-item-title"> {{ light.title }} </div>
+                <div class='row'>
+                    <div class="ebay-item-price col-xs-6">
+                        <div class='pull-left'>
+                            {{ light.currentPrice }}
+                        </div>
+                    </div>
+                    <div class="ebay-item-status col-xs-6">
+                        <div class='pull-right'>
+                            {{ light.saleTimeLeft }}
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!--Retest-->
+    <div class="col-xs-12 stats-footer">
+        <button type="button" class="btn btn-large btn-success btn-share" ui-sref="activity">Retest</button>
+    </div>
+
 </div>
