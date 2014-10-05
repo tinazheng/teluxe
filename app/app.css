@@ -11,7 +11,10 @@ html, body {
 .cursor-pointer{
     cursor: pointer;
 }
-
+/* Center the Text... */
+.centered-text{
+    text-align:center;
+}
 .arrow {
     height: 10px;
 }
