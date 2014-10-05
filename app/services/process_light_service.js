@@ -11,7 +11,7 @@ angular.module('teluxe')
 
         function getCurrentWatts(lux, bulb, distance){
             var efficacy = 0;
-            if (bulb == "flourescent")
+            if (bulb == "fluorescent")
                 efficacy = 43;
             else if (bulb == "incandescent")
                 efficacy = 12;
