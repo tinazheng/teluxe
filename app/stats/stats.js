@@ -6,8 +6,8 @@ angular.module("teluxe")
         //Declare Variables
         $scope.qStorage = qStorage;
         $scope.lights = [];
-//        $scope.results = qStorage.model.results;
-        $scope.results = {
+        $scope.results = qStorage.model.results;
+/*        $scope.results = {
             'percentile': 982.4769036935782,
             'currentWattage': 21.873417721518987,
             'comment': "You do not have enough light.  You are 100 lux below the recommended amount.",
@@ -16,7 +16,7 @@ angular.module("teluxe")
             'recommendedLumens': 360,
             'recommendedTemperature': 5800,
             'savings':0.5235654
-        };
+        };*/
 
         console.log($scope.results);
 
