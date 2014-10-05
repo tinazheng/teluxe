@@ -25,7 +25,7 @@ angular.module('teluxe')
         }
 
         function getCurrentLumens(lux, d){
-            var REFLECTION_COEFFICIENT = 0.48;
+            var REFLECTION_COEFFICIENT = 0.48;              // Between 0.07 and 0.1
             return lux * d * d * REFLECTION_COEFFICIENT;
         }
 
@@ -69,7 +69,7 @@ angular.module('teluxe')
                 return 50;
             else if (activity == "computer")    // No more than 60W
                 return 60;
-            else if (activity == "lounging")      // Ambient Light Bulbs
+            else if (activity == "lounge")      // Ambient Light Bulbs
                 return 12;
             else if (activity == "tv")          // No more than 60W
                 return 60;
