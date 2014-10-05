@@ -1,12 +1,12 @@
 angular.module('teluxe')
-    .factory('processLightService', function(){
+    .factory('processLightService', function($window){
 
         function getPercentile(lux, activity){
-            var SCORE_COEFFICIENT = 0.2;
+            var SCORE_COEFFICIENT = 0.00002;
             var LUX_RECOMMENDED = getRecommendedLux(activity);
 
-            var lux_change = abs(lux - LUX_RECOMMENDED);
-            return 1000 * pow(Math.E, - SCORE_COEFFICIENT * pow(lux_change,2));
+            var lux_change = $window.Math.abs(lux - LUX_RECOMMENDED);
+            return 100 * $window.Math.pow(Math.E, - SCORE_COEFFICIENT * $window.Math.pow(lux_change,2));
         }
 
         function getRecommendedLux(activity){
@@ -23,6 +23,21 @@ angular.module('teluxe')
             return 0;
         }
 
+        function getComment(lux, activity){
+            var LUX_RECOMMENDED = getRecommendedLux(activity);
+            var lux_change = $window.Math.abs(lux - LUX_RECOMMENDED);
+
+            if (lux < LUX_RECOMMENDED)
+                return "You do not have enough light.  You are " + lux_change + " lux below the recommended amount";
+            return "You are wasting energy.  You have " + lux_change + " lux above the recommended amount";
+        }
+
+        function getRecommendedLumens(activity, d){
+            var REFLECTION_COEFFICIENT = 0.07;              // Between 0.8 and 0.12
+            var recommendedLux = getRecommendedLux(activity);
+            return recommendedLux * d * d * REFLECTION_COEFFICIENT;
+        }
+
         function getRecommendedWatts(activity){
             if (activity == "sleep")            // 100W for Wake-Up Lights
                 return 100;
@@ -35,11 +50,6 @@ angular.module('teluxe')
             else if (activity == "tv")          // No more than 60W
                 return 60;
             return 0;
-        }
-
-        function getRecommendedLumens(activity, d){
-            var recommendedLux = getRecommendedLux(activity);
-            return recommendedLux * 4 * Math.PI * d * d;
         }
 
         function getRecommendedTemperature(activity){
@@ -61,12 +71,14 @@ angular.module('teluxe')
         }
 
         return{
-            getRecommendedSettings:  function(lux_source, lux_use, action, distance) {
+            getRecommendedSettings:  function(lux_use, action, distance) {
                 return {
                     "percentile": getPercentile(lux_use, action),
-                    "watts": getRecommendedWatts(action, distance),
-                    "lumens": getRecommendedLumens(action, distance),
-                    "temperature": getRecommendedTemperature(action)
+                    "comment": getComment(lux_use, action),
+                    "recommendedWatts": getRecommendedWatts(action, distance),
+                    "recommendedLux": getRecommendedLux(action),
+                    "recommendedLumens": getRecommendedLumens(action, distance),
+                    "recommendedTemperature": getRecommendedTemperature(action)
                 };
             }
         }

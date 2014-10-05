@@ -35,6 +35,16 @@ teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $l
                 }
             }
         })
+        .state('testProcessLight', {
+            url: '/test',
+            title: 'Test Process Light',
+            views: {
+                'content':{
+                    templateUrl: 'Test/test.html',
+                    controller: 'testController'
+                }
+            }
+        })
         .state('activity', {
             url: '/activity',
             title: "What are you doing right now?",
@@ -56,5 +66,5 @@ teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $l
             }
         });
 
-    $locationProvider.html5Mode(true);
+    //$locationProvider.html5Mode(true);
 });
