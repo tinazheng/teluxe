@@ -47,13 +47,11 @@ angular.module('teluxe')
             var LUX_RECOMMENDED = getRecommendedLux(activity);
             var lux_change = $window.Math.abs(lux - LUX_RECOMMENDED);
 
-            console.log('lux change'+lux_change);
-
             if (lux < LUX_RECOMMENDED)
-                return "You do not have enough light.  You are " + lux_change + " lux below the recommended amount.";
+                return "You do not have enough light.  You are " + parseInt(lux_change) + " lux below the recommended amount.";
             else if(lux == LUX_RECOMMENDED)
                 return "Perfect! You have the ideal amount of light.";
-            return "You are wasting energy.  You have " + lux_change + " lux above the recommended amount.";
+            return "You are wasting energy.  You have " + parseInt(lux_change) + " lux above the recommended amount.";
         }
 
         function getRecommendedLumens(activity, d){
