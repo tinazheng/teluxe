@@ -7,6 +7,7 @@
 angular.module("teluxe")
     .controller('testController',function($scope, ebay_search_service){
 
+
         function Light(picture, title, url, currentPrice, saleTimeLeft){
             this.picture = picture;
             this.title = title;
