@@ -51,7 +51,7 @@ angular.module("teluxe")
             return $scope.lights;
         };
 
-        ebay_search_service.getLightBulbs(40, "flourescent")
+        ebay_search_service.getLightBulbs(40, 200, "LED")
             .success(function(data, status, headers, config){
                 console.log(data);
                 console.log($scope.setLightsFromData(data));
