@@ -12,17 +12,17 @@ angular.module('teluxe')
         function getCurrentWatts(lux, bulb, distance){
             var efficacy = 0;
             if (bulb == "flourescent")
-                efficacy = 20;
+                efficacy = 43;
             else if (bulb == "incandescent")
-                efficacy = 60;
+                efficacy = 12;
             else if (bulb == "LED")
-                efficacy = 60;
+                efficacy = 79;
 
             return getCurrentLumens(lux, distance) / efficacy;
         }
 
         function getCurrentLumens(lux, d){
-            var REFLECTION_COEFFICIENT = 0.09;              // Between 0.07 and 0.1
+            var REFLECTION_COEFFICIENT = 0.48;
             return lux * d * d * REFLECTION_COEFFICIENT;
         }
 
