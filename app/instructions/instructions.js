@@ -71,5 +71,5 @@ angular.module("teluxe")
 
         //Initialize Listener
         lux.listener();
-        //$scope.runListener();
+        $scope.runListener();
 });

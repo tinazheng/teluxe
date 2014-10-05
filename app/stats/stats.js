@@ -34,6 +34,7 @@ angular.module("teluxe")
         };
 
         //TODO: Figure out what to do w/ lack of message
+        //TODO: Change app domain
         $scope.goPost = function(){
             FB.ui(
                 {
