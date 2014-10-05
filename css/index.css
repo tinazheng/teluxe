@@ -5,7 +5,7 @@ html, body {
 	text-align: center;
 	margin: 0px;
 	height: 100%;
-	overflow-x: hidden;
+	/*overflow-x: hidden;*/
 }
 h1{
 	font-family: 'Open Sans Condensed', sans-serif;
@@ -25,54 +25,70 @@ h3 {
 	font-size: 0.6em;
 }
 
-.ebay-item-picture {
-	position: relative;
-	float:left;
-	width: 30%;
+.ebay-item-image {
+	position:relative;
+	width: 80vw;
+	height: 40vh;
+/*	margin: 0px auto;*/
+	background: url('http://i.ebayimg.com/00/s/NjAwWDYwMA==/z/-UkAAOSwbqpTz08o/$_12.JPG');
+	background-size: cover;
+/*	text-align: center;*/
 }
+
 
 .ebay-item-title {
-	color: #6C7A89;
 	font-size: 0.5rem;
 }
-
 .ebay-item-description {
 	color: #6C7A89;
 	font-size: 0.5rem;
 }
 
-.ebay-item-selling-status {
+.ebay-item-status {
+/*	display: inline-block;*/
 	color: #27ae60;
-	font-size: 0.5rem;
+	font-size: 0.6rem;
+	float: right;
 }
 
-.ebay-item-current-price {
-	color: #27ae60;
-	font-size: 0.5rem;
+.ebay-item-price {
+/*	display: inline-block;*/
+	color: #6C7A89;
+	font-size: 0.6rem;
+	float: left;
 }
 
 .dark-text {
 	color: #6C7A89;
+	font-size: 0.5rem;
 }
 #ebay-title {
 	color: #2980b9;
-	font-size: 0.6em;
+	font-size: 0.5em;
 	font-weight: 300;
 }
 
 
 .ebay-item-text-wrapper {
 	position: relative;
-	margin-left: 5px;
-	float: left;
+/*	width: 100%;*/
+/*	float: left;*/
 }
 .ebay-item-wrapper {
-	height: 30vh;
+	border-bottom: 1px solid black;
+	padding-bottom: 10px;
 	text-align: left;
+	overflow:hidden;
+/*	width: 100vw;*/
 }
 
 #bulb-name{
 	color:#6C7A89 ;
+}
+.bulb-image {
+	position:relative;
+	width: 80%;
+	margin: 0px auto;
 }
 .bulb-icon {
 	position: relative;
