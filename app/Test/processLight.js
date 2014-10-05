@@ -15,7 +15,15 @@ angular.module("teluxe")
         //console.log("800 lux at 1/2 foot for reading");
         //console.log(x);
 
-        var x = processLightService.getRecommendedSettings(1000, "read", 1.7);
-        console.log("800 lux at 1/2 foot for reading");
+        var x = processLightService.getRecommendedSettings(1600, "read", 1.3, "LED");
         console.log(x);
+
+        //var x = processLightService.getRecommendedSettings(508, "computer", 1.3, "LED");
+        //console.log(x);
+
+        //var x = processLightService.getRecommendedSettings(166, "tv", 1.3, "LED");
+        //console.log(x);
+        //
+        //var x = processLightService.getRecommendedSettings(508, "lounge", 1.3, "LED");
+        //console.log(x);
     });

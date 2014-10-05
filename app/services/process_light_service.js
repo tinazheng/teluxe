@@ -12,17 +12,17 @@ angular.module('teluxe')
         function getCurrentWatts(lux, bulb, distance){
             var efficacy = 0;
             if (bulb == "flourescent")
-                efficacy = 20;
+                efficacy = 43;
             else if (bulb == "incandescent")
-                efficacy = 60;
+                efficacy = 12;
             else if (bulb == "LED")
-                efficacy = 60;
+                efficacy = 79;
 
             return getCurrentLumens(lux, distance) / efficacy;
         }
 
         function getCurrentLumens(lux, d){
-            var REFLECTION_COEFFICIENT = 0.09;              // Between 0.07 and 0.1
+            var REFLECTION_COEFFICIENT = 0.48;              // Between 0.07 and 0.1
             return lux * d * d * REFLECTION_COEFFICIENT;
         }
 
@@ -77,15 +77,15 @@ angular.module('teluxe')
             var DAYLIGHT = 5800;     // Between 5000K and 6500K
 
             if (activity == "sleep")
-                return SOFT_WHITE;
+                return "SOFT_WHITE";
             else if (activity == "read")
-                return DAYLIGHT;
+                return "DAYLIGHT";
             else if (activity == "computer")
-                return COOL;
+                return "COOL";
             else if (activity == "lounge")
-                return SOFT_WHITE;
+                return "SOFT_WHITE";
             else if (activity == "tv")
-                return COOL;
+                return "COOL";
             return 0;
         }
 
