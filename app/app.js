@@ -69,5 +69,5 @@ teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $l
             }
         });
 
-    $locationProvider.html5Mode(true);
+    //$locationProvider.html5Mode(true);
 });

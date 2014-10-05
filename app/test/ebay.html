@@ -1,0 +1,23 @@
+<div class="container-fluid stats">
+	<span class="dark-text"><< back</span>
+	<br/>
+	<h1 class='centered-text' id="ebay-title">Ebay listings for: <span id="bulb-name">'GE White Hybrid Halogen CFL15W'</span></h1>
+	<br/>
+	<div class="ebay-item-wrapper"  ng-repeat="light in lights">
+		<div class="ebay-item-image" ng-style="{'background-image': 'url({{ light.picture }})'}"> 
+		</div>
+		<div class="ebay-item-title"><a href=" {{ light.url }} "> {{ light.title }} </a></div>
+		<div class='row'>
+			<div class="ebay-item-price col-xs-6">
+				<div class='pull-left'>
+					{{ light.currentPrice }}
+				</div>
+			</div>
+			<div class="ebay-item-status col-xs-6">
+				<div class='pull-right'>
+					{{ light.saleTimeLeft }}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
