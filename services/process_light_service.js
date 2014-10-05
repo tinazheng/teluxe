@@ -45,7 +45,7 @@ angular.module('teluxe')
 
         function getComment(lux, activity){
             var LUX_RECOMMENDED = getRecommendedLux(activity);
-            var lux_change = $window.Math.abs(lux - LUX_RECOMMENDED);
+            var lux_change = $window.Math.floor($window.Math.abs(lux - LUX_RECOMMENDED));
 
             console.log('lux change'+lux_change);
 
