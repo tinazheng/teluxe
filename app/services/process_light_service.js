@@ -1,3 +1,6 @@
+/**
+ * Created by JMBros on 10/4/14.
+ */
 angular.module('teluxe')
     .factory('processLightService', function($window){
 
@@ -17,11 +20,8 @@ angular.module('teluxe')
                 efficacy = 12;
             else if (bulb == "LED")
                 efficacy = 79;
-<<<<<<< HEAD
-=======
             return efficacy
         }
->>>>>>> b1bb4139f920a9e7727689aed4050a56cac1dd31
 
         function getCurrentWatts(lux, bulb, distance){
             return getCurrentLumens(lux, distance) / getEfficacy(bulb);
@@ -89,15 +89,9 @@ angular.module('teluxe')
             else if (activity == "read")
                 return "DAYLIGHT";
             else if (activity == "computer")
-<<<<<<< HEAD
                 return "COOL";
-            else if (activity == "lounge")
-                return "SOFT_WHITE";
-=======
-                return COOL;
             else if (activity == "lounging")
-                return SOFT_WHITE;
->>>>>>> b1bb4139f920a9e7727689aed4050a56cac1dd31
+                return "SOFT_WHITE";
             else if (activity == "tv")
                 return "COOL";
             return 0;
