@@ -5,11 +5,11 @@ angular.module('teluxe')
     .factory('processLightService', function($window){
 
         function getPercentile(lux, activity){
-            var SCORE_COEFFICIENT = 0.00002;
+            var SCORE_COEFFICIENT = - 0.000004;
             var LUX_RECOMMENDED = getRecommendedLux(activity);
 
             var lux_change = $window.Math.abs(lux - LUX_RECOMMENDED);
-            return 1200 * $window.Math.pow(Math.E, - SCORE_COEFFICIENT * $window.Math.pow(lux_change,2));
+            return 1200 * $window.Math.pow(Math.E, SCORE_COEFFICIENT * $window.Math.pow(lux_change,2));
         }
 
         function getEfficacy(bulb){
@@ -54,7 +54,7 @@ angular.module('teluxe')
                 return "You do not have enough light.  You are " + parseInt(lux_change) + " lux below the recommended amount.";
             else if(lux == LUX_RECOMMENDED)
                 return "Perfect! You have the ideal amount of light.";
-            return "You are wasting energy.  You have " + parseInt(lux_change) + " lux above the recommended amount.";
+            return "You are wasting energy!!!  You have " + parseInt(lux_change) + " lux above the recommended amount.";
         }
 
         function getRecommendedLumens(activity, d){
@@ -83,13 +83,13 @@ angular.module('teluxe')
             var DAYLIGHT = 5800;     // Between 5000K and 6500K
 
             if (activity == "sleep")
-                return "SOFT_WHITE";
+                return "SOFT WHITE";
             else if (activity == "read")
                 return "DAYLIGHT";
             else if (activity == "computer")
                 return "COOL";
             else if (activity == "lounging")
-                return "SOFT_WHITE";
+                return "SOFT WHITE";
             else if (activity == "tv")
                 return "COOL";
             return 0;

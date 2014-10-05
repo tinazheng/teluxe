@@ -28,7 +28,7 @@
     </div>
     <div class="row">
         <div class="col-xs-12" ng-class="{'col-xs-6':results.savings>0}">
-            <h3>Temperature: </h3><span class="score" ng-bind="results.recommendedTemperature+'K'"></span>
+            <h3>Temperature: </h3><span class="score" ng-bind="results.recommendedTemperature"></span>
         </div>
         <div class="col-xs-6" ng-if="results.savings>0">
             <h3>Reduces Cost By: </h3><span class="score" ng-bind="'~'+(results.savings*100 | number: 0)+'%'"></span>
