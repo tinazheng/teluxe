@@ -3,7 +3,7 @@
 /**
  * Created by Mike on 10/4/14.
  */
-var teluxe = angular.module('teluxe', ['ui.router', 'duScroll']);
+var teluxe = angular.module('teluxe', ['ui.router', 'duScroll','facebook']);
 
 teluxe.run(
     [          '$rootScope', '$state', '$stateParams',
@@ -20,7 +20,10 @@ teluxe.run(
 );
 
 //Angular UI Router Config
-teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $logProvider){
+teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $logProvider, $httpProvider){
+    //Enable CORS
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
     //TODO: Remove Debugging
     $logProvider.debugEnabled(true);
     $urlRouterProvider.otherwise('/');
@@ -35,16 +38,6 @@ teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $l
                 }
             }
         })
-        .state('testProcessLight', {
-            url: '/test',
-            title: 'Test Process Light',
-            views: {
-                'content':{
-                    templateUrl: 'Test/test.html',
-                    controller: 'testController'
-                }
-            }
-        })
         .state('activity', {
             url: '/activity',
             title: "What are you doing right now?",
@@ -52,6 +45,16 @@ teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $l
                 'content':{
                     templateUrl: 'activity/activity.html',
                     controller: 'activityController'
+                }
+            }
+        })
+        .state('stats', {
+            url: '/stats',
+            title: "Your Results",
+            views: {
+                'content':{
+                    templateUrl: 'stats/stats.html',
+                    controller: 'statsController'
                 }
             }
         })
@@ -64,7 +67,33 @@ teluxe.config(function($stateProvider, $urlRouterProvider, $locationProvider, $l
                     controller: 'distanceController'
                 }
             }
+        })
+        .state('instructions', {
+            url: '/instructions',
+            title: "Light source sampling",
+            views: {
+                'content':{
+                    templateUrl: 'instructions/instructions.html',
+                    controller: 'instructionsController'
+                }
+            }
         });
 
     //$locationProvider.html5Mode(true);
 });
+
+//Facebook Config
+teluxe.config(function(FacebookProvider){
+        var myAppId = '298846526977428';
+
+        // You can set appId with setApp method
+        FacebookProvider.setAppId('myAppId');
+
+        /**
+         * After setting appId you need to initialize the module.
+         * You can pass the appId on the init method as a shortcut too.
+         */
+        FacebookProvider.init(myAppId);
+
+    }
+);
