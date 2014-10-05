@@ -122,6 +122,7 @@ h3 {
 	line-height: 16.66vh;
 	height: 16.6666666vh;
 /*	border: 1px solid black;*/
+
 }
 .horizontal-bar2 {
 	position:relative;
@@ -142,35 +143,4 @@ h3 {
 	top: 5vh;
 	text-align: center;
 	height: 70vh;
-}
-.arrow {
-	height: 10px;
-}
-.question {
-	font-size: 0.89rem;
-	background: #96281B;
-}
-
-.answer {
-	font-size: 0.7rem;
-}
-
-.answer1 {
-	background: #d01716;
-}
-
-.answer2 {
-	background: #e51c23;
-}
-
-.answer3 {
-	background: #e84e40;
-}
-
-.answer4 {
-	background: #f36c60;
-}
-
-.answer5 {
-	background: #f69988;
 }

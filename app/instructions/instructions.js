@@ -4,6 +4,8 @@
 angular.module("teluxe")
     .controller('instructionsController',function($scope, $rootScope, $state, qStorage, lux, processLightService){
 
+        $scope.qStorage = qStorage;
+        
         $scope.sampling = false;
 
         $scope.samples = [];

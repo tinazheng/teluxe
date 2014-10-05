@@ -42,6 +42,16 @@ html, body {
     background: #03a678;
 }
 
+/* Types Question Color */
+#types .question {
+    background: #420198;
+}
+
+/* Types Answer Color */
+#types .answer {
+    background: #4E08A8;
+}
+
 .answer1 {
     opacity: 1;
 }
